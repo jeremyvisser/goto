@@ -1,0 +1,45 @@
+<!doctype html>
+
+<title>Goto</title>
+<meta name="generator" value="{{ .Generator }}" />
+{{ if ne .BaseURL "" }}
+<link rel="search" type="application/opensearchdescription+xml" title="Goto" href="{{ .BaseURL }}/opensearch.xml" />
+{{ end }}
+
+<style>
+    body {
+        font-family: system-ui, sans-serif;
+        margin: 0 auto;
+        padding: 0 1em;
+        width: fit-content;
+    }
+    th {
+        min-width: 20em;
+        text-align: left;
+    }
+    td {
+        border-top: 0.1em solid;
+    }
+    th, td {
+        padding: 0.5em 0;
+        max-width: 50%;
+    }
+    td > * {
+        margin-right: 1em;
+    }
+</style>
+
+<h1>Goto</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Target</th>
+    </tr>
+    {{ range $name, $target := .Links }}
+    <tr>
+        <td><a href="/{{ $name }}">{{ $name }}</a></td>
+        <td><a href="{{ $target }}">{{ $target }}</a></td>
+    </tr>
+    {{ end }}
+</table>

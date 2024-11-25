@@ -11,7 +11,7 @@ func TestLink(t *testing.T) {
 	dst1, _ := url.Parse("http://dst/one")
 	dst2, _ := url.Parse("http://dst/two?a=1")
 
-	l := Links{
+	l := links{
 		"link1": Target{dst1},
 		"link2": Target{dst2},
 	}
